@@ -15,6 +15,12 @@ if ( ! function_exists( 'idealabstarter_scripts' ) ) :
 	// Enqueue the main Stylesheet.
 	wp_enqueue_style( 'main-stylesheet', get_template_directory_uri() . '/assets/stylesheets/foundation.css', array(), '2.6.1', 'all' );
 
+	// Enqueue the pure styles
+	wp_enqueue_style( 'pure-stylesheet', get_template_directory_uri() . '/assets/stylesheets/pure.css', array() );
+
+	// Enqueue the pure grids styles
+	wp_enqueue_style( 'pure-grid-stylesheet', get_template_directory_uri() . '/assets/stylesheets/grids-responsive.css', array() );
+
 	// Deregister the jquery version bundled with WordPress.
 	wp_deregister_script( 'jquery' );
 

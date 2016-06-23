@@ -12,7 +12,6 @@ register_nav_menus(array(
 	'mobile-nav' => 'Mobile',
 ));
 
-
 /**
  * Desktop navigation - right top bar
  *
@@ -23,7 +22,7 @@ if ( ! function_exists( 'idealabstarter_top_bar_r' ) ) {
 		wp_nav_menu( array(
 			'container'      => false,
 			'menu_class'     => 'dropdown menu',
-			'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+			'items_wrap'     => '<ul id="%1$s" class="%2$s dropdown menu desktop-menu pure-menu-list" data-dropdown-menu role="menubar">%3$s</ul>',
 			'theme_location' => 'top-bar-r',
 			'depth'          => 3,
 			'fallback_cb'    => false,
@@ -31,7 +30,6 @@ if ( ! function_exists( 'idealabstarter_top_bar_r' ) ) {
 		));
 	}
 }
-
 
 /**
  * Mobile navigation - topbar (default) or offcanvas
@@ -50,7 +48,6 @@ if ( ! function_exists( 'idealabstarter_mobile_nav' ) ) {
 	}
 }
 
-
 /**
  * Add support for buttons in the top-bar menu:
  * 1) In WordPress admin, go to Apperance -> Menus.
@@ -59,15 +56,12 @@ if ( ! function_exists( 'idealabstarter_mobile_nav' ) ) {
  * 4) Save Menu. Your menu item will now appear as a button in your top-menu
 */
 if ( ! function_exists( 'idealabstarter_add_menuclass' ) ) {
-	function idealabstarter_add_menuclass( $ulclass ) {
-		$find = array('/<a rel="button"/', '/<a title=".*?" rel="button"/');
-		$replace = array('<a rel="button" class="button"', '<a rel="button" class="button"');
-
-		return preg_replace( $find, $replace, $ulclass, 1 );
+	function idealabstarter_add_menuclass( $output ) {
+		$output= preg_replace('/<a/', '<a class="pure-menu-link"', $output, -1);
+    return $output;
 	}
 	add_filter( 'wp_nav_menu','idealabstarter_add_menuclass' );
 }
-
 
 /**
  * Adapted for Foundation from http://thewebtaylor.com/articles/wordpress-creating-breadcrumbs-without-a-plugin
