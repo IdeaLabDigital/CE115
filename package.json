@@ -1,10 +1,10 @@
 {
-  "name": "foundationpress",
-  "title": "FoundationPress",
+  "name": "idealabstarter",
+  "title": "idealabstarter",
   "version": "2.6.2",
-  "description": "FoundationPress is a WordPress starter theme based on Foundation 6 by Zurb",
+  "description": "idealabstarter is a WordPress starter theme based on Foundationpress",
   "keywords": [
-    "FoundationPress",
+    "idealabstarter",
     "WordPress",
     "starter theme",
     "Foundation",
@@ -13,13 +13,11 @@
     "customizable",
     "responsive"
   ],
-  "homepage": "http://foundationpress.olefredrik.com/",
-  "bugs": "https://github.com/olefredrik/FoundationPress/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/olefredrik/FoundationPress.git"
+    "url": "https://github.com/IdeaLabDigital/IdeaLabStarterTheme.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.1.0",

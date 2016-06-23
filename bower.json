@@ -1,5 +1,5 @@
 {
-  "name": "foundationpress",
+  "name": "idealabstarter",
   "main": [
     "assets/stylesheets/foundation.css",
     "assets/javascript/foundation.js"

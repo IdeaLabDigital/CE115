@@ -11,8 +11,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package idealabstarter
+ * @since idealabstarter 1.0.0
  */
 
 get_header(); ?>
@@ -32,10 +32,10 @@ get_header(); ?>
 		<?php endif; // End have_posts() check. ?>
 
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php if ( function_exists( 'foundationpress_pagination' ) ) { foundationpress_pagination(); } else if ( is_paged() ) { ?>
+		<?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
 			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
+				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
+				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
 			</nav>
 		<?php } ?>
 

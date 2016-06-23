@@ -2,12 +2,12 @@
 /**
  * Protocol Relative Theme Assets
  *
- * @package FoundationPress
- * @since FoundationPress 1.1.0
+ * @package idealabstarter
+ * @since idealabstarter 1.1.0
  */
 
-if ( ! class_exists( 'Foundationpress_protocol_relative_theme_assets' ) ) :
-	class Foundationpress_protocol_relative_theme_assets {
+if ( ! class_exists( 'idealabstarter_protocol_relative_theme_assets' ) ) :
+	class idealabstarter_protocol_relative_theme_assets {
 		/**
 		 * Plugin URI: https://github.com/ryanjbonnell/Protocol-Relative-Theme-Assets
 		 * Description: Transforms enqueued CSS and JavaScript theme URLs to use protocol-relative paths.
@@ -86,5 +86,5 @@ if ( ! class_exists( 'Foundationpress_protocol_relative_theme_assets' ) ) :
 		}
 	}
 
-	$foundationpress_protocol_relative_theme_assets = new Foundationpress_protocol_relative_theme_assets;
+	$idealabstarter_protocol_relative_theme_assets = new idealabstarter_protocol_relative_theme_assets;
 endif;

@@ -2,14 +2,14 @@
 /**
  * Register theme support for languages, menus, post-thumbnails, post-formats etc.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package idealabstarter
+ * @since idealabstarter 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_theme_support' ) ) :
-function foundationpress_theme_support() {
+if ( ! function_exists( 'idealabstarter_theme_support' ) ) :
+function idealabstarter_theme_support() {
 	// Add language support
-	load_theme_textdomain( 'foundationpress', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'idealabstarter', get_template_directory() . '/languages' );
 
 	// Switch default core markup for search form, comment form, and comments to output valid HTML5
 	add_theme_support( 'html5', array(
@@ -42,5 +42,5 @@ function foundationpress_theme_support() {
 	add_editor_style( 'assets/stylesheets/foundation.css' );
 }
 
-add_action( 'after_setup_theme', 'foundationpress_theme_support' );
+add_action( 'after_setup_theme', 'idealabstarter_theme_support' );
 endif;

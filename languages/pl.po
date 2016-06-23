@@ -183,8 +183,8 @@ msgstr ""
 
 #. /archive/search.
 #. *
-#. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @subpackage idealabstarter
+#. * @since idealabstarter 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

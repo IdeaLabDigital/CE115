@@ -2,8 +2,8 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: FoundationPress 5.5.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/FoundationPress\n"
+"Project-Id-Version: idealabstarter 5.5.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/idealabstarter\n"
 "POT-Creation-Date: 2015-03-12 12:58:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -234,18 +234,18 @@ msgid "Search"
 msgstr "Sök"
 
 #. Theme Name of the plugin/theme
-msgid "FoundationPress"
-msgstr "FoundationPress"
+msgid "idealabstarter"
+msgstr "idealabstarter"
 
 #. Theme URI of the plugin/theme
-msgid "http://foundationpress.olefredrik.com"
-msgstr "http://foundationpress.olefredrik.com"
+msgid "http://idealabstarter.olefredrik.com"
+msgstr "http://idealabstarter.olefredrik.com"
 
 #. Description of the plugin/theme
 msgid ""
-"FoundationPress is a WordPress starter theme based on Foundation 5 by Zurb"
+"idealabstarter is a WordPress starter theme based on Foundation 5 by Zurb"
 msgstr ""
-"FoundationPress är ett starter-tema för WordPress baserat på Foundation 5 "
+"idealabstarter är ett starter-tema för WordPress baserat på Foundation 5 "
 "av Zurb"
 
 #. Author of the plugin/theme

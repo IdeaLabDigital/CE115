@@ -2,35 +2,35 @@
 /**
  * Clean up WordPress defaults
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package idealabstarter
+ * @since idealabstarter 1.0.0
  */
 
-if ( ! function_exists( 'foundationpress_start_cleanup' ) ) :
-function foundationpress_start_cleanup() {
+if ( ! function_exists( 'idealabstarter_start_cleanup' ) ) :
+function idealabstarter_start_cleanup() {
 
 	// Launching operation cleanup.
-	add_action( 'init', 'foundationpress_cleanup_head' );
+	add_action( 'init', 'idealabstarter_cleanup_head' );
 
 	// Remove WP version from RSS.
-	add_filter( 'the_generator', 'foundationpress_remove_rss_version' );
+	add_filter( 'the_generator', 'idealabstarter_remove_rss_version' );
 
 	// Remove pesky injected css for recent comments widget.
-	add_filter( 'wp_head', 'foundationpress_remove_wp_widget_recent_comments_style', 1 );
+	add_filter( 'wp_head', 'idealabstarter_remove_wp_widget_recent_comments_style', 1 );
 
 	// Clean up comment styles in the head.
-	add_action( 'wp_head', 'foundationpress_remove_recent_comments_style', 1 );
+	add_action( 'wp_head', 'idealabstarter_remove_recent_comments_style', 1 );
 
 }
-add_action( 'after_setup_theme','foundationpress_start_cleanup' );
+add_action( 'after_setup_theme','idealabstarter_start_cleanup' );
 endif;
 /**
  * Clean up head.+
  * ----------------------------------------------------------------------------
  */
 
-if ( ! function_exists( 'foundationpress_cleanup_head' ) ) :
-function foundationpress_cleanup_head() {
+if ( ! function_exists( 'idealabstarter_cleanup_head' ) ) :
+function idealabstarter_cleanup_head() {
 
 	// EditURI link.
 	remove_action( 'wp_head', 'rsd_link' );
@@ -74,13 +74,13 @@ function foundationpress_cleanup_head() {
 endif;
 
 // Remove WP version from RSS.
-if ( ! function_exists( 'foundationpress_remove_rss_version' ) ) :
-function foundationpress_remove_rss_version() { return ''; }
+if ( ! function_exists( 'idealabstarter_remove_rss_version' ) ) :
+function idealabstarter_remove_rss_version() { return ''; }
 endif;
 
 // Remove injected CSS for recent comments widget.
-if ( ! function_exists( 'foundationpress_remove_wp_widget_recent_comments_style' ) ) :
-function foundationpress_remove_wp_widget_recent_comments_style() {
+if ( ! function_exists( 'idealabstarter_remove_wp_widget_recent_comments_style' ) ) :
+function idealabstarter_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 	  remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
@@ -88,8 +88,8 @@ function foundationpress_remove_wp_widget_recent_comments_style() {
 endif;
 
 // Remove injected CSS from recent comments widget.
-if ( ! function_exists( 'foundationpress_remove_recent_comments_style' ) ) :
-function foundationpress_remove_recent_comments_style() {
+if ( ! function_exists( 'idealabstarter_remove_recent_comments_style' ) ) :
+function idealabstarter_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if ( isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments']) ) {
 	remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -99,6 +99,6 @@ endif;
 
 // Add WooCommerce support for wrappers per http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-add_action('woocommerce_before_main_content', 'foundationpress_before_content', 10);
+add_action('woocommerce_before_main_content', 'idealabstarter_before_content', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_after_main_content', 'foundationpress_after_content', 10);
+add_action('woocommerce_after_main_content', 'idealabstarter_after_content', 10);
