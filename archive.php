@@ -20,7 +20,7 @@ get_header(); ?>
 <div class="page-wrap center-copy">
 
   <div class="row">
-    <div class="large-12 columns">
+    <div class="medium-11 medium-centered columns">
 			<article class="main-content">
 				<?php if ( have_posts() ) : ?>
 

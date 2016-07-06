@@ -21,7 +21,7 @@ function register_cpt_cx_products() {
         'search_items' => _x( 'Search', 'cx_products' ),
         'not_found' => _x( 'None found', 'cx_products' ),
         'not_found_in_trash' => _x( 'None found in Trash', 'cx_products' ),
-        'parent_item_colon' => _x( 'Parent Service:', 'cx_products' ),
+        'parent_item_colon' => _x( 'Parent Product:', 'cx_products' ),
         'menu_name' => _x( 'Products', 'cx_products' ),
     );
 
@@ -37,7 +37,7 @@ function register_cpt_cx_products() {
         'publicly_queryable' => true,
         'exclude_from_search' => false,
         'has_archive' => false,
-        'menu_icon'   => 'dashicons-megaphone',
+        'menu_icon'   => 'dashicons-hammer',
         'query_var' => true,
         'can_export' => true,
         'rewrite' => array("slug" => "product"),
@@ -49,6 +49,48 @@ function register_cpt_cx_products() {
 
 // adding the function to the Wordpress init
 add_action( 'init', 'register_cpt_cx_products' );
+
+function register_cpt_cx_events() {
+
+    $labels = array(
+        'name' => _x( 'Events', 'cx_events' ),
+        'singular_name' => _x( 'Events', 'cx_events' ),
+        'add_new' => _x( 'Add New', 'cx_events' ),
+        'add_new_item' => _x( 'Add New', 'cx_events' ),
+        'edit_item' => _x( 'Edit', 'cx_events' ),
+        'new_item' => _x( 'New', 'cx_events' ),
+        'view_item' => _x( 'View', 'cx_events' ),
+        'search_items' => _x( 'Search', 'cx_events' ),
+        'not_found' => _x( 'None found', 'cx_events' ),
+        'not_found_in_trash' => _x( 'None found in Trash', 'cx_events' ),
+        'parent_item_colon' => _x( 'Parent Event:', 'cx_events' ),
+        'menu_name' => _x( 'Events', 'cx_events' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'description' => 'floor custom post type',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => false,
+        'menu_icon'   => 'dashicons-tickets-alt',
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => array("slug" => "event"),
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'cx_events', $args );
+}
+
+// adding the function to the Wordpress init
+add_action( 'init', 'register_cpt_cx_events' );
 
 // adding the Taxonomy, like Categories for custom post type
 add_action( 'init', 'build_taxonomies', 0 );

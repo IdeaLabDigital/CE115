@@ -11,7 +11,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'sidebar-widgets',
 	  'name' => __( 'Sidebar widgets', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this sidebar container.', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container.', 'idealabstarter' ),
 	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
 	  'before_title' => '<h6>',
@@ -41,7 +41,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'subfooter-widgets-catalog',
 	  'name' => __( 'Catalog widgets', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="">',
 	  'after_widget' => '</div>',
 	  'before_title' => '<h4>',
@@ -51,7 +51,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'subfooter-widgets-order',
 	  'name' => __( 'Order Forms widgets', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="">',
 	  'after_widget' => '</div>',
 	  'before_title' => '<h4>',
@@ -61,7 +61,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'subfooter-widgets-made',
 	  'name' => __( 'Made in America widgets', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="usa-logo">',
 	  'after_widget' => '</div>',
 	  'before_title' => '<p><b>',
@@ -71,7 +71,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'footer-widgets-left',
 	  'name' => __( 'Footer widgets Left', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
 	  'before_title' => '<p><b>',
@@ -81,7 +81,7 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'footer-widgets-center',
 	  'name' => __( 'Footer widgets Center', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
 	  'before_title' => '<p><b>',
@@ -91,11 +91,41 @@ function idealabstarter_sidebar_widgets() {
 	register_sidebar(array(
 	  'id' => 'footer-widgets-right',
 	  'name' => __( 'Footer widgets Right', 'idealabstarter' ),
-	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
 	  'after_widget' => '</article>',
 	  'before_title' => '<p><b>',
 	  'after_title' => '</b></p>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'contact-widgets-left',
+	  'name' => __( 'Contact widgets Manufacturing Location', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
+	  'before_title' => '<h5>',
+	  'after_title' => '</h5>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'contact-widgets-center',
+	  'name' => __( 'Contact widgets Emails', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
+	  'before_title' => '<h5>',
+	  'after_title' => '</h5>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'contact-widgets-right',
+	  'name' => __( 'Contact widgets RFQ', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
+	  'before_widget' => '<article id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</article>',
+	  'before_title' => '<h5>',
+	  'after_title' => '</h5>',
 	));
 }
 

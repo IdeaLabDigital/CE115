@@ -7,7 +7,7 @@
  */
 
 ?>
-<aside class="sidebar">
+<aside class="panel">
 	<?php do_action( 'idealabstarter_before_sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 	<?php do_action( 'idealabstarter_after_sidebar' ); ?>

@@ -12,16 +12,23 @@
 
 get_header(); ?>
 
-<div class="page-wrap center-copy">
-
+<div class="page-wrap">
+  
   <div class="row">
     <div class="large-12 columns">
+      <div class="shim-lrg"></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="medium-11 medium-centered columns">
       <article class="main-content">
+
         <?php if ( have_posts() ) : ?>
 
           <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>
-            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+            <?php get_template_part( 'template-parts/content', 'page' ); ?>
           <?php endwhile; ?>
 
           <?php else : ?>
@@ -38,6 +45,12 @@ get_header(); ?>
         <?php } ?>
 
       </article>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="shim-lrg"></div>
     </div>
   </div>
 
