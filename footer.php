@@ -9,8 +9,30 @@
  */
 
 ?>
-
 		</section>
+
+		<div class="lightGreyBG">
+		  <div class="row">
+		    <div class="large-12 columns"> 
+		      <div class="shim-lrg"></div>
+		    </div>
+		  </div>  
+		  <div class="row"> 
+		    <div class="large-12 columns center-copy">
+			    <div class="callouts">
+			    	<div class="col"><?php dynamic_sidebar( 'subfooter-widgets-catalog' ); ?></div>
+			    	<div class="col"><?php dynamic_sidebar( 'subfooter-widgets-order' ); ?></div>
+			    	<div class="col"><?php dynamic_sidebar( 'subfooter-widgets-made' ); ?></div>
+			    </div>
+		    </div>
+		  </div>
+		  <div class="row">
+		    <div class="large-12 columns"> 
+		      <div class="shim-lrg"></div>
+		    </div>
+		  </div>  
+		</div> 
+
 		<?php do_action( 'idealabstarter_before_footer' ); ?>
 		<footer id="footer">
 			<div class="row">
@@ -50,11 +72,6 @@
 
 <?php wp_footer(); ?>
 <?php do_action( 'idealabstarter_before_closing_body' ); ?>
-
-<!-- REMOVE FOR PRODUCTION! -->
-<script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.13.0.js'><\/script>".replace("HOST", location.hostname));
-//]]></script>
 
 </body>
 </html>

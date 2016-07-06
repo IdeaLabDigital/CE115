@@ -33,14 +33,14 @@ function register_cpt_cx_products() {
         'public' => true,
         'show_ui' => true,
         'show_in_menu' => true,
-        'show_in_nav_menus' => false,
-        'publicly_queryable' => false,
-        'exclude_from_search' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
         'has_archive' => false,
         'menu_icon'   => 'dashicons-megaphone',
         'query_var' => true,
         'can_export' => true,
-        'rewrite' => array("slug" => "products"),
+        'rewrite' => array("slug" => "product"),
         'capability_type' => 'post'
     );
 
@@ -67,14 +67,13 @@ function build_taxonomies() {
     );
 }
 
-function add_menu_icons_styles(){
-?>
+function add_menu_icons_styles(){ ?>
 
-<style>
-#adminmenu .menu-icon-events div.wp-menu-image:before {
-  content: "\f111";
-}
-</style>
+    <style>
+    #adminmenu .menu-icon-events div.wp-menu-image:before {
+      content: "\f111";
+    }
+    </style>
 
 <?php
 }

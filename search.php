@@ -8,37 +8,39 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
+<div class="page-wrap center-copy">
 
-		<?php do_action( 'idealabstarter_before_content' ); ?>
+  <div class="row">
+    <div class="large-12 columns">
 
-		<h2><?php _e( 'Search Results for', 'idealabstarter' ); ?> "<?php echo get_search_query(); ?>"</h2>
+			<?php do_action( 'idealabstarter_before_content' ); ?>
 
-	<?php if ( have_posts() ) : ?>
+			<h4><?php _e( 'Search Results for', 'idealabstarter' ); ?> "<?php echo get_search_query(); ?>"</h4>
 
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-		<?php endwhile; ?>
+			<?php if ( have_posts() ) : ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+				<?php endwhile; ?>
 
-	<?php endif;?>
+			<?php else : ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-	<?php do_action( 'idealabstarter_before_pagination' ); ?>
+			<?php endif;?>
 
-	<?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
+			<?php do_action( 'idealabstarter_before_pagination' ); ?>
 
-		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
-		</nav>
-	<?php } ?>
+			<?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
 
-	<?php do_action( 'idealabstarter_after_content' ); ?>
+				<nav id="post-nav">
+					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
+					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
+				</nav>
+			<?php } ?>
 
+			<?php do_action( 'idealabstarter_after_content' ); ?>
+		</div>
 	</div>
-	<?php get_sidebar(); ?>
+
 </div>
 <?php get_footer();

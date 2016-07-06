@@ -15,30 +15,34 @@
 
 get_header(); ?>
 
-<div id="page" role="main">
-	<article class="main-content">
-	<?php if ( have_posts() ) : ?>
+<div class="page-wrap center-copy">
 
-		<?php /* Start the Loop */ ?>
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-		<?php endwhile; ?>
+	<div class="row">
+		<div class="large-12 columns">
+			<article class="main-content">
+				<?php if ( have_posts() ) : ?>
 
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+					<?php /* Start the Loop */ ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+					<?php endwhile; ?>
 
-		<?php endif; // End have_posts() check. ?>
+					<?php else : ?>
+						<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
-		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
-				<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
-			</nav>
-		<?php } ?>
+				<?php endif; // End have_posts() check. ?>
 
-	</article>
-	<?php get_sidebar(); ?>
+				<?php /* Display navigation to next/previous pages when applicable */ ?>
+				<?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
+					<nav id="post-nav">
+						<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
+						<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
+					</nav>
+				<?php } ?>
+
+			</article>
+		</div>
+	</div>
 
 </div>
 

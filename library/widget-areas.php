@@ -39,6 +39,36 @@ function idealabstarter_sidebar_widgets() {
 	));
 
 	register_sidebar(array(
+	  'id' => 'subfooter-widgets-catalog',
+	  'name' => __( 'Catalog widgets', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'before_widget' => '<div id="%1$s" class="">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<h4>',
+	  'after_title' => '</h4>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'subfooter-widgets-order',
+	  'name' => __( 'Order Forms widgets', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'before_widget' => '<div id="%1$s" class="">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<h4>',
+	  'after_title' => '</h4>',
+	));
+
+	register_sidebar(array(
+	  'id' => 'subfooter-widgets-made',
+	  'name' => __( 'Made in America widgets', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),
+	  'before_widget' => '<div id="%1$s" class="usa-logo">',
+	  'after_widget' => '</div>',
+	  'before_title' => '<p><b>',
+	  'after_title' => '</b></p>',
+	));
+
+	register_sidebar(array(
 	  'id' => 'footer-widgets-left',
 	  'name' => __( 'Footer widgets Left', 'idealabstarter' ),
 	  'description' => __( 'Drag widgets to this footer container', 'idealabstarter' ),

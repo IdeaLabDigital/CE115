@@ -8,10 +8,11 @@
 
 get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
+<div class="page-wrap">
 
-		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+	<div class="row">
+		<div class="large-12 columns">
+			<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<header>
 				<h1 class="entry-title"><?php _e( 'File Not Found', 'idealabstarter' ); ?></h1>
 			</header>
@@ -27,8 +28,9 @@ get_header(); ?>
 				</ul>
 			</div>
 		</article>
-
+		</div>
 	</div>
-	<?php get_sidebar(); ?>
+
 </div>
+
 <?php get_footer();

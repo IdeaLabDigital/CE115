@@ -10,36 +10,37 @@
  * @since idealabstarter 1.0.0
  */
 
- get_header(); ?>
+get_header(); ?>
 
- <?php get_template_part( 'template-parts/featured-image' ); ?>
+<div class="page-wrap center-copy">
 
- <div id="page" role="main">
+  <div class="row">
+    <div class="large-12 columns">
+      <article class="main-content">
+        <?php if ( have_posts() ) : ?>
 
- <?php do_action( 'idealabstarter_before_content' ); ?>
- <?php while ( have_posts() ) : the_post(); ?>
-   <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
-       <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
-       </header>
-       <?php do_action( 'idealabstarter_page_before_entry_content' ); ?>
-       <div class="entry-content">
-           <?php the_content(); ?>
-           <?php edit_post_link( __( 'Edit', 'idealabstarter' ), '<span class="edit-link">', '</span>' ); ?>
-       </div>
-       <footer>
-           <?php wp_link_pages( array('before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'idealabstarter' ), 'after' => '</p></nav>' ) ); ?>
-           <p><?php the_tags(); ?></p>
-       </footer>
-       <?php do_action( 'idealabstarter_page_before_comments' ); ?>
-       <?php comments_template(); ?>
-       <?php do_action( 'idealabstarter_page_after_comments' ); ?>
-   </article>
- <?php endwhile;?>
+          <?php /* Start the Loop */ ?>
+          <?php while ( have_posts() ) : the_post(); ?>
+            <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+          <?php endwhile; ?>
 
- <?php do_action( 'idealabstarter_after_content' ); ?>
- <?php get_sidebar(); ?>
+          <?php else : ?>
+            <?php get_template_part( 'template-parts/content', 'none' ); ?>
 
- </div>
+        <?php endif; // End have_posts() check. ?>
 
- <?php get_footer();
+        <?php /* Display navigation to next/previous pages when applicable */ ?>
+        <?php if ( function_exists( 'idealabstarter_pagination' ) ) { idealabstarter_pagination(); } else if ( is_paged() ) { ?>
+          <nav id="post-nav">
+            <div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'idealabstarter' ) ); ?></div>
+            <div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'idealabstarter' ) ); ?></div>
+          </nav>
+        <?php } ?>
+
+      </article>
+    </div>
+  </div>
+
+</div>
+
+<?php get_footer();
