@@ -7,7 +7,7 @@
  */
 
 ?>
-<aside class="panel">
+<aside class="panel shim-top-sml">
 	<?php do_action( 'idealabstarter_before_sidebar' ); ?>
 	<?php dynamic_sidebar( 'sidebar-widgets' ); ?>
 	<?php do_action( 'idealabstarter_after_sidebar' ); ?>

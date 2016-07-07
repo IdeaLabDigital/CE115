@@ -70,7 +70,7 @@ function register_cpt_cx_events() {
     $args = array(
         'labels' => $labels,
         'hierarchical' => false,
-        'description' => 'floor custom post type',
+        'description' => 'events custom post type',
         'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
         'public' => true,
         'show_ui' => true,
@@ -91,6 +91,49 @@ function register_cpt_cx_events() {
 
 // adding the function to the Wordpress init
 add_action( 'init', 'register_cpt_cx_events' );
+
+function register_cpt_cx_catalogs() {
+
+    $labels = array(
+        'name' => _x( 'Catalogs', 'cx_catalogs' ),
+        'singular_name' => _x( 'Catalogs', 'cx_catalogs' ),
+        'add_new' => _x( 'Add New', 'cx_catalogs' ),
+        'add_new_item' => _x( 'Add New', 'cx_catalogs' ),
+        'edit_item' => _x( 'Edit', 'cx_catalogs' ),
+        'new_item' => _x( 'New', 'cx_catalogs' ),
+        'view_item' => _x( 'View', 'cx_catalogs' ),
+        'search_items' => _x( 'Search', 'cx_catalogs' ),
+        'not_found' => _x( 'None found', 'cx_catalogs' ),
+        'not_found_in_trash' => _x( 'None found in Trash', 'cx_catalogs' ),
+        'parent_item_colon' => _x( 'Parent Catalog:', 'cx_catalogs' ),
+        'menu_name' => _x( 'Catalogs', 'cx_catalogs' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'description' => 'catalogs custom post type',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => false,
+        'menu_icon'   => 'dashicons-media-default',
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => array("slug" => "catalog"),
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'cx_catalogs', $args );
+}
+
+// adding the function to the Wordpress init
+add_action( 'init', 'register_cpt_cx_catalogs' );
+
 
 // adding the Taxonomy, like Categories for custom post type
 add_action( 'init', 'build_taxonomies', 0 );

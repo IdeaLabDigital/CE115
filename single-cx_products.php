@@ -34,7 +34,7 @@ get_header(); ?>
 					<hr>
 					
 					<?php do_action( 'idealabstarter_post_before_entry_content' ); ?>
-					<div class="entry-content row">
+					<div class="entry-content row shim-top-med">
 				    <div class="large-5 columns">
 				    	<?php
 				    	$product_id = get_field('cx_products_id');

@@ -32,8 +32,8 @@
       <ul class="inline-list">
         <li class="hide-for-medium"><a href=""><i class="fa fa-mobile fa-2x"></i></a></li>
         <li class="hide-for-medium"><a href=""><i class="fa fa-envelope-o fa-2x"></i></a></a></li>
-        <li><a href=""><i class="fa fa-facebook fa-2x"></i></a></li>
-        <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+        <li><a href="https://www.facebook.com/cementexusa/"><i class="fa fa-facebook fa-2x"></i></a></li>
+        <li><a href="https://twitter.com/CementexJeff"><i class="fa fa-twitter fa-2x"></i></a></li>
         <li><a href=""><i class="fa fa-instagram fa-2x"></i></a></li>
         <li style="width: 265px;" class="show-for-medium-only">        
           <?php get_search_form(); ?>

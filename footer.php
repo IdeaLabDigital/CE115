@@ -47,8 +47,8 @@
 				</div>
 				<div class="small-12 medium-6 large-3 columns">
           <ul class="inline-list">
-            <li><a href=""><i class="fa fa-facebook fa-2x"></i></a></li>
-            <li><a href=""><i class="fa fa-twitter fa-2x"></i></a></li>
+            <li><a href="https://www.facebook.com/cementexusa/"><i class="fa fa-facebook fa-2x"></i></a></li>
+            <li><a href="https://twitter.com/CementexJeff"><i class="fa fa-twitter fa-2x"></i></a></li>
             <li><a href=""><i class="fa fa-instagram fa-2x"></i></a></li>
           </ul> 
         </div>

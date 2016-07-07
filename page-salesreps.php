@@ -1,7 +1,7 @@
 <?php
 /**
- * The Events Page Template
- * Wordpress Page must have slug of "events"!!
+ * The Sales Representative Locator Page Template
+ * Wordpress Page must have slug of "salesreps"!!
  *
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
