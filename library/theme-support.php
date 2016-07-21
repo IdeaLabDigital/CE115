@@ -51,3 +51,37 @@ function cc_mime_types( $mimes ){
 	return $mimes;
 }
 add_filter( 'upload_mimes', 'cc_mime_types' );
+
+function short_mail( $input ){
+	// in case scheme relative URI is passed, e.g., //www.crunchify.com/
+	$input = trim($input, '/');
+ 
+	// If scheme not included, prepend it
+	if (!preg_match('#^http(s)?://#', $input)) {
+		$input = 'http://' . $input;
+	}
+ 
+	$urlParts = parse_url($input);
+ 
+	// Get Domain. i.e. crunchify.com
+	$domain = preg_replace('/^www\./', '', $urlParts['host']);
+ 
+	// Get Path. i.e. /path
+	$path = preg_replace('/^www\./', '', $urlParts['path']);
+ 
+	// Merge to generate complete URL
+	$link = $domain. $path;
+
+	return $link;
+}
+
+/**
+ * Halt the main query in the case of an empty search 
+ */
+add_filter( 'posts_search', function( $search, \WP_Query $q )
+{
+  if( ! is_admin() && empty( $search ) && $q->is_search() && $q->is_main_query() )
+    $search .=" AND 0=1 ";
+
+  return $search;
+}, 10, 2 );

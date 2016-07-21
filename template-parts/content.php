@@ -15,7 +15,7 @@
 		<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 		<?php idealabstarter_entry_meta(); ?>
 	</header>
-	<div class="entry-content">
+	<div class="content">
 		<?php the_content( __( 'Read More...', 'idealabstarter' ) ); ?>
 	</div>
 	<hr />

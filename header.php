@@ -40,8 +40,8 @@
         </li>
       </ul>
 
-      <section class="right-small">
-        <a class="right-off-canvas-toggle" href="#"><span>Menu</span></a>
+      <section class="tab-bar-section right-small">
+        <a role="button" data-toggle="mobile-nav" class="right-off-canvas-toggle"><span>Menu</span></a>
       </section>
     </nav>
 
@@ -67,8 +67,8 @@
 	      </div>
 	      <div class="medium-8 large-9 columns show-for-medium">
 	        <div class="contact-nav-wrap">
-	          <p>Toll Free: 800-654-1292</p>
-	          <p><a href="mailto:cs@cementexusa.com"><i class="fa fa-envelope-o"></i> Customer Service</a></p>
+	          <p>Toll Free: 800-654-1292<br />
+	          <a href="mailto:cs@cementexusa.com"><i class="fa fa-envelope-o"></i> Customer Service</a></p>
 	        </div>
 	      </div>
 	    </div>
@@ -93,5 +93,5 @@
 
 	</header>
 
-	<section class="pagewrap">
+	<section class="main-section">
 		<?php do_action( 'idealabstarter_after_header' );

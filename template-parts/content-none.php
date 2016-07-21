@@ -14,7 +14,7 @@
 	<h1 class="page-title"><?php _e( 'Nothing Found', 'idealabstarter' ); ?></h1>
 </header>
 
-<div class="page-content">
+<div class="page-content shim-bot-lrg">
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 	<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'idealabstarter' ), admin_url( 'post-new.php' ) ); ?></p>
@@ -22,12 +22,10 @@
 	<?php elseif ( is_search() ) : ?>
 
 	<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'idealabstarter' ); ?></p>
-	<?php get_search_form(); ?>
 
 	<?php else : ?>
 
-	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'idealabstarter' ); ?></p>
-	<?php get_search_form(); ?>
+	<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for.', 'idealabstarter' ); ?></p>
 
 	<?php endif; ?>
 </div>

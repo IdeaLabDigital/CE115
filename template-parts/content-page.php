@@ -15,7 +15,7 @@
 		<h2 class="text-center"><?php the_title(); ?></h2>
 		<?php //idealabstarter_entry_meta(); ?>
 	</header>
-	<div class="entry-content">
+	<div class="content">
 		<?php the_content(); ?>
 	</div>
 </div>

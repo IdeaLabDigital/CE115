@@ -8,20 +8,22 @@
 
 get_header(); ?>
 
-<div class="page-wrap center-copy">
+<div class="page-wrap">
 
   <div class="row">
     <div class="large-12 columns">
 
 			<?php do_action( 'idealabstarter_before_content' ); ?>
 
-			<h4><?php _e( 'Search Results for', 'idealabstarter' ); ?> "<?php echo get_search_query(); ?>"</h4>
+			<h5 class="shim-top-med shim-bot-med"><?php _e( 'Search Results for', 'idealabstarter' ); ?> "<?php echo get_search_query(); ?>"</h5>
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-				<?php endwhile; ?>
+				<ul class="search-list">
+					<?php while ( have_posts() ) : the_post(); ?>
+						<?php get_template_part( 'template-parts/content', 'search' ); ?>
+					<?php endwhile; ?>
+				</ul>
 
 			<?php else : ?>
 				<?php get_template_part( 'template-parts/content', 'none' ); ?>

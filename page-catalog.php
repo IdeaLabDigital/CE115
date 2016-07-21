@@ -66,6 +66,12 @@ get_header(); ?>
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="medium-12 columns">
+						<?php dynamic_sidebar( 'catalog-widgets' ); ?>
+					</div>
+				</div>
+
 			</article>
 
 		</div>

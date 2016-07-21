@@ -39,8 +39,18 @@ function idealabstarter_sidebar_widgets() {
 	));
 
 	register_sidebar(array(
+	  'id' => 'catalog-widgets',
+	  'name' => __( 'Catalog Page widgets', 'idealabstarter' ),
+	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
+	  'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	  'after_widget' => '</div>',
+	  'before_title' => '',
+	  'after_title' => '',
+	));
+
+	register_sidebar(array(
 	  'id' => 'subfooter-widgets-catalog',
-	  'name' => __( 'Catalog widgets', 'idealabstarter' ),
+	  'name' => __( 'Subfooter Catalog widgets', 'idealabstarter' ),
 	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="">',
 	  'after_widget' => '</div>',
@@ -50,7 +60,7 @@ function idealabstarter_sidebar_widgets() {
 
 	register_sidebar(array(
 	  'id' => 'subfooter-widgets-order',
-	  'name' => __( 'Order Forms widgets', 'idealabstarter' ),
+	  'name' => __( 'Subfooter Order Forms widgets', 'idealabstarter' ),
 	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="">',
 	  'after_widget' => '</div>',
@@ -60,7 +70,7 @@ function idealabstarter_sidebar_widgets() {
 
 	register_sidebar(array(
 	  'id' => 'subfooter-widgets-made',
-	  'name' => __( 'Made in America widgets', 'idealabstarter' ),
+	  'name' => __( 'Subfooter Made in America widgets', 'idealabstarter' ),
 	  'description' => __( 'Drag widgets to this container', 'idealabstarter' ),
 	  'before_widget' => '<div id="%1$s" class="usa-logo">',
 	  'after_widget' => '</div>',

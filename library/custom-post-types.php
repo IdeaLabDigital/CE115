@@ -131,8 +131,47 @@ function register_cpt_cx_catalogs() {
     register_post_type( 'cx_catalogs', $args );
 }
 
+function register_cpt_cx_reps() {
+
+    $labels = array(
+        'name' => _x( 'Representatives', 'cx_reps' ),
+        'singular_name' => _x( 'Representatives', 'cx_reps' ),
+        'add_new' => _x( 'Add New', 'cx_reps' ),
+        'add_new_item' => _x( 'Add New', 'cx_reps' ),
+        'edit_item' => _x( 'Edit', 'cx_reps' ),
+        'new_item' => _x( 'New', 'cx_reps' ),
+        'view_item' => _x( 'View', 'cx_reps' ),
+        'search_items' => _x( 'Search', 'cx_reps' ),
+        'not_found' => _x( 'None found', 'cx_reps' ),
+        'not_found_in_trash' => _x( 'None found in Trash', 'cx_reps' ),
+        'parent_item_colon' => _x( 'Parent Representative:', 'cx_reps' ),
+        'menu_name' => _x( 'Representatives', 'cx_reps' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => false,
+        'description' => 'catalogs custom post type',
+        'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes', 'revisions' ),
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'publicly_queryable' => true,
+        'exclude_from_search' => false,
+        'has_archive' => false,
+        'menu_icon'   => 'dashicons-businessman',
+        'query_var' => true,
+        'can_export' => true,
+        'rewrite' => array("slug" => "representative"),
+        'capability_type' => 'post'
+    );
+
+    register_post_type( 'cx_reps', $args );
+}
+
 // adding the function to the Wordpress init
-add_action( 'init', 'register_cpt_cx_catalogs' );
+add_action( 'init', 'register_cpt_cx_reps' );
 
 
 // adding the Taxonomy, like Categories for custom post type
@@ -148,6 +187,17 @@ function build_taxonomies() {
             'label' => 'Product Category',
             'query_var' => true,
             'rewrite' => array("slug" => "categories")
+        )
+    );
+    register_taxonomy(
+        'reps_location',
+        'cx_reps',
+        array(
+            'hierarchical' => true,
+            'show_admin_column' => true,
+            'label' => 'Rep Location',
+            'query_var' => true,
+            'rewrite' => array("slug" => "locations")
         )
     );
 }

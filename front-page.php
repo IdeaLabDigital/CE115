@@ -90,7 +90,7 @@ get_header(); ?>
             echo '</div>';
           }
         echo '</div>';
-      } ?>
+      } wp_reset_postdata(); ?>
 
     </div>
   </div>

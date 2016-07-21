@@ -34,47 +34,113 @@ get_header(); ?>
 
         <?php endif; // End have_posts() check. ?>
 
+        <div class="row">
+					<div class="large-12 medium-12 columns">
+						<div class="subnav shim-bot-lrg">
+							<ul class="button-group">
+
+								<?php
+								$terms = get_terms( 'reps_location', array(
+									'orderby'    => 'title',
+									'order'      => 'ASC',
+									'hide_empty' => 0,
+									'parent' => '68'
+								) );
+								foreach ( $terms as $term ) : setup_postdata( $post ); ?>
+									<li class="cap-copy">
+										<a href="#<?php echo $term->slug; ?>" class="button tiny"><?php echo $term->description; ?></a>
+									</li>
+								<?php endforeach; wp_reset_postdata();
+
+								$terms2 = get_terms( 'reps_location', array(
+									'orderby'    => 'title',
+									'order'      => 'DESC',
+									'hide_empty' => 0,
+									'parent' => '69'
+								) );
+								foreach ( $terms2 as $term ) : setup_postdata( $post ); ?>
+									<li class="cap-copy">
+										<a href="#<?php echo $term->slug; ?>" class="button tiny"><?php echo $term->description; ?></a>
+									</li>
+								<?php endforeach; wp_reset_postdata(); ?>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
-					<div class="large-8 medium-10 medium-centered columns">
+					<div class="large-12 medium-12 columns">
+						<ul class="rep-list">
 
-						<?php
-						$args = array(
-							'post_type'  => 'cx_events',
-							'order'      => 'ASC',
-						);
-						$events_loop = new WP_Query( $args );
-						if ( $events_loop->have_posts() ) : ?>
-							<table><thead><tr><th>Show Dates</th><th>Show Name</th><th>Location</th></tr></thead><tbody>
-						  	<?php while ( $events_loop->have_posts() ) : $events_loop->the_post(); ?>
-						    	
-									<tr>
-										<td>
-											<?php
-											$event_dates = get_field('cx_events_date');
-											if( $event_dates ): ?>
-												<?php echo $event_dates; ?>
-											<?php else : ?>
-												<?php echo 'No Date Available'; ?>
-											<?php endif; ?>
-										</td>
-										<td>
-											<?php the_title(); ?>
-										</td>
-										<td>
-											<?php
-											$event_loc = get_field('cx_events_location');
-											if( $event_loc ): ?>
-												<?php echo $event_loc; ?>
-											<?php else : ?>
-												<?php echo 'No Location Available'; ?>
-											<?php endif; ?>
-										</td>
-									</tr>
+							<?php
 
-						  	<?php endwhile; wp_reset_postdata(); ?>
-						  </tbody></table>
-						<?php endif; ?>
+							// run a query for each US State location
+							foreach( $terms as $term ) : ?>
 
+								<li class="rep-location">
+
+									<a name="<?php echo $term->slug; ?>"></a>
+									<h4 class=""><?php echo $term->name; ?></h4>
+									<div class="row small-up-2 shim-bot-sml">
+
+										<?php
+										// Define the query
+										$args = array(
+										  'post_type' => 'cx_reps',
+										  'posts_page'  => -1,
+										  'tax_query' => array(
+			                	array(
+			                  	'taxonomy' => 'reps_location',
+			                  	'field' => 'slug',
+			                  	'terms' => $term->slug,
+			                	),
+			                ),
+										);
+										$reps_loop = new WP_Query( $args );
+									  while ( $reps_loop->have_posts() ) : $reps_loop->the_post(); ?>
+											<?php get_template_part( 'template-parts/content', 'reps' ); ?>
+									  <?php endwhile; ?>
+
+									</div>
+								</li>
+
+							<?php endforeach; wp_reset_postdata(); ?> <!--end US States-->
+
+							<?php 
+							// run a query for Other locations
+							foreach( $terms2 as $term ) : ?>
+
+								<li class="rep-location">
+
+									<a name="<?php echo $term->slug; ?>"></a>
+									<h4 class=""><?php echo $term->name; ?></h4>
+									<div class="row small-up-2 shim-bot-med">
+
+										<?php
+										// Define the query
+										$args = array(
+										  'post_type' => 'cx_reps',
+										  'posts_page'  => -1,
+										  'tax_query' => array(
+			                	array(
+			                  	'taxonomy' => 'reps_location',
+			                  	'field' => 'slug',
+			                  	'terms' => $term->slug,
+			                	),
+			                ),
+										);
+										$reps_loop = new WP_Query( $args );
+									  while ( $reps_loop->have_posts() ) : $reps_loop->the_post(); ?>
+											<?php get_template_part( 'template-parts/content', 'reps' ); ?>
+									  <?php endwhile; ?>
+
+									</div>
+								</li>
+
+							<?php endforeach; wp_reset_postdata(); ?> <!--end Other Locations-->
+
+						</ul>
 					</div>
 				</div>
 

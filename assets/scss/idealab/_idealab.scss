@@ -77,6 +77,10 @@ a {
 	}
 }
 
+.cap-copy {
+	text-transform: uppercase;
+}
+
 /* header
 ================================================== */
 .logo {
@@ -120,14 +124,15 @@ form.searchform {
 			input.searchsubmit {
 				font-family: FontAwesome;
 				margin: 0 !important;
-				padding: 0 35% !important;
+				padding: 0 10% !important;
 				width: 100%;
 				text-align: center;
 				background-color: #f2d047;
 				border-radius: 0;
 				border: none !important;
 				color: #222;
-				vertical-align: top;  
+				vertical-align: top;
+				height: 100%;
 				&:hover { background-color: #ccc;}
 			}
 		}
@@ -142,6 +147,7 @@ form.searchform {
 
 /* Navigation
 ================================================== */
+
 /* --- topnav --- */
 .soc-nav-lg {
 	background-color: #111112; 
@@ -261,7 +267,13 @@ form.searchform {
 	}
 	.active a {
 		background: transparent;
-		color: #333; 
+		color: #333;
+		&:hover,
+		&:active {
+			background-color: rgba(120, 120, 120, 1);
+  		color: #fff;
+  		font-weight: bold;
+		}
 	}
 }
 
@@ -282,6 +294,14 @@ form.searchform {
   }
 }
 
+.pagination {
+	margin-bottom: 40px;
+	text-align: center; 
+	.current {
+		background: #d5d5d5;
+	}
+}
+
 /*--buttons--*/
 .btn-submit {
 	margin-top: 1.5rem !important;
@@ -289,6 +309,10 @@ form.searchform {
 
 /* Homepage Content
 ================================================== */
+.home .hero h2 {
+	font-size: 36px;
+}
+
 .hero {
 	  background: linear-gradient(90deg, transparent -20%, #e6e6e6 50%, transparent 120%), 
   	#d5d5d5;
@@ -459,7 +483,7 @@ button.tiny, .button.tiny {
 
 /* Resources
 ================================================== */
-.page-template-TabbedSubpages .subnav ul {
+.page-template-tabbed-subpages .subnav ul {
 	margin-left: 0;
 	li {
 		display: none;
@@ -471,7 +495,7 @@ button.tiny, .button.tiny {
 		}
 		ul.children li {
 			display: inline-block !important;
-	    margin: 0 1px;
+	    margin: 0 2px 6px 0;
 	    &.active {
 	    	a {
 	    		background-color: #111; 
@@ -487,6 +511,47 @@ button.tiny, .button.tiny {
 	    a {
 	    	display: block;
 	    }
+		}
+	}
+}
+
+.subnav ul.button-group {
+	margin-left: 0;
+	margin-right: 0;
+	li {
+		display: inline-block !important;
+	  margin: 0 2px 6px 0;
+	}
+}
+
+ul.cutsheet-list,
+ul.search-list {
+	margin-left: 0;
+	li {
+		padding: 15px 20px !important;
+		list-style: none;
+		&:nth-child(odd) {
+			background-color: #f1f1f1;
+		}
+		.cutsheet-item {
+		  display: list-item;
+			list-style-type: disc;
+			margin-left: 1.25rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+/* Sales Reps Content
+================================================== */
+
+ul.rep-list {
+	margin-left: 0;
+	li {
+		padding: 15px 20px !important;
+		list-style: none;
+		&:nth-child(odd) {
+			background-color: #f1f1f1;
 		}
 	}
 }

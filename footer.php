@@ -10,6 +10,8 @@
 
 ?>
 		</section>
+		
+		<?php do_action( 'idealabstarter_before_footer' ); ?>
 
 		<div class="lightGreyBG">
 		  <div class="row">
@@ -31,9 +33,8 @@
 		      <div class="shim-lrg"></div>
 		    </div>
 		  </div>  
-		</div> 
+		</div>
 
-		<?php do_action( 'idealabstarter_before_footer' ); ?>
 		<footer id="footer">
 			<div class="row">
 				<div class="small-12 medium-6 large-3 columns">
@@ -59,14 +60,14 @@
 	      </div>
 			</div>
 		</footer>
-		<?php do_action( 'idealabstarter_after_footer' ); ?>
 
+		<?php do_action( 'idealabstarter_after_footer' ); ?>
 		<?php do_action( 'idealabstarter_layout_end' ); ?>
 
 <?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
-		</div><!-- Close off-canvas wrapper inner -->
+			</div><!-- Close off-canvas content wrapper -->
+		</div><!-- Close off-canvas inner wrapper -->
 	</div><!-- Close off-canvas wrapper -->
-</div><!-- Close off-canvas content wrapper -->
 <?php endif; ?>
 
 
