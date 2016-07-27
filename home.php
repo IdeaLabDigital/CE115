@@ -30,7 +30,7 @@ get_header(); ?>
 				
 				<header>
 					<?php $our_title = get_the_title( get_option('page_for_posts', true) ); ?>
-					<h2 class="text-center shim-bot-lrg"><?php echo $our_title; ?></h2>
+					<h2 class="text-center"><?php echo $our_title; ?></h2>
 				</header>
 
 				<hr>
