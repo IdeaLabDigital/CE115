@@ -1,7 +1,7 @@
 <?php
 /**
  * The Events Page Template
- * Page must have slug of "events"!!
+ * Page must have slug of "contact-us"!!
  *
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}

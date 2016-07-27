@@ -131,6 +131,9 @@ function register_cpt_cx_catalogs() {
     register_post_type( 'cx_catalogs', $args );
 }
 
+// adding the function to the Wordpress init
+add_action( 'init', 'register_cpt_cx_catalogs' );
+
 function register_cpt_cx_reps() {
 
     $labels = array(

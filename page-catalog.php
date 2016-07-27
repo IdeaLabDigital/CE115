@@ -43,6 +43,8 @@ get_header(); ?>
 						$args = array(
 							'post_type'  => 'cx_catalogs',
 							'order'      => 'ASC',
+							'orderby'    => 'menu_order',
+							'posts_per_page' => -1,
 						);
 						$catalog_loop = new WP_Query( $args );
 						if ( $catalog_loop->have_posts() ) : ?>

@@ -221,18 +221,19 @@ form.searchform {
 }
 
 /* Vertical Menus - show the dropdown arrow */
-.pure-menu-has-children,
-.menu-item-has-children {
-	.pure-menu-link:after {
-    content: "\25B8";
-    font-size: 2px !important;
-    border-color: #333 transparent transparent !important;
+.vertical.menu {
+	.pure-menu-has-children, .menu-item-has-children {
+		.pure-menu-link:after {
+	    content: "\25B8";
+	    font-size: 2px !important;
+	    border-color: rgba(255, 255, 255, 0.6) transparent transparent !important;
+		}
+		&:hover {
+	    .pure-menu-link:after {
+	    	color: #fff !important;
+	    }
+	  }
 	}
-	&:hover {
-    .pure-menu-link:after {
-    	color: #fff !important;
-    }
-  }
 }
 
 /* Horizontal Menus - show the dropdown arrow */
@@ -248,6 +249,17 @@ form.searchform {
 	  display: inline-block;
     zoom: 1;
     vertical-align: middle;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a {
+	&:after { 
+		border-color: #333 transparent transparent;
+	}
+	&:hover, &:active {
+		&:after {
+			border-color: #fff transparent transparent;
+		}
+	}
 }
 
 .menu-item a:hover,
@@ -559,14 +571,14 @@ ul.rep-list {
 /* Subpage Content
 ================================================== */
 .catalog {
-	li {
+	.column {
 		img {
-		  -webkit-box-shadow: 0 2px 1px rgba(150, 150, 150, 1);
+			-webkit-box-shadow: 0 2px 1px rgba(150, 150, 150, 1);
 			-moz-box-shadow: 0 2px 1px rgba(150, 150, 150, 1);
 			box-shadow: 0 2px 1px rgba(150, 150, 150, 1);
 		}
-		p{
-			margin: 10px 0;
+		p {
+			margin-top: 10px;
 		}
 	}
 }
@@ -769,6 +781,48 @@ footer {
 }
 
 /*--off-canvas--*/
+
+.off-canvas.position-right {
+	-webkit-backface-visibility: hidden;
+  background: #333333;
+  bottom: 0;
+  box-sizing: content-box;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: absolute;
+  transition: transform 500ms ease 0s;
+  width: 15.625rem;
+  z-index: 1001;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate(100%, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+  right: 0;
+  top: 0;
+  ul {
+  	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li {
+	    a {
+	    	border-bottom: 1px solid #262626;
+		    color: rgba(255, 255, 255, 0.7);
+		    display: block;
+		    padding: 0.9rem;
+		    transition: background 300ms ease;
+		    background: transparent; 
+		    &:hover, &:active {  background-color: #111;}
+	    }
+	    ul.submenu {
+	    	margin-left: 1.25rem;
+    		margin-bottom: 0;
+	    }
+    }
+  }
+}
 
 .inline-list {
   list-style: none;

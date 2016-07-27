@@ -49,8 +49,8 @@
     	<div class="row">
     		<div class="large-12 columns">
 	        <ul class="inline-list">
-	          <li><a href=""><i class="fa fa-facebook"></i></a></li>
-	          <li><a href=""><i class="fa fa-twitter"></i></a></li>
+	          <li><a href="https://www.facebook.com/cementexusa/"><i class="fa fa-facebook"></i></a></li>
+	          <li><a href="https://twitter.com/CementexJeff"><i class="fa fa-twitter"></i></a></li>
 	          <li><a href=""><i class="fa fa-instagram"></i></a></li>
 	          <li>        
 	            <?php get_search_form(); ?>
